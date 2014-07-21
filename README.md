@@ -14,6 +14,14 @@ tools in other languages.
 
 So how does it work?
 
+## Goals of this warmup
+
+The main goals of this warmup are the ability to:
+
+- write a simple rake task
+- write a rake task that has a dependency on another rake task
+- have a high-level understanding of what is happening when we type `RACK_ENV=test rake db:migrate`
+
 ## Defining Tasks
 
 You define rake tasks in a file called `Rakefile` in the root of your project.
