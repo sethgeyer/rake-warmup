@@ -24,7 +24,7 @@ The main goals of this warmup are the ability to:
 
 ## Defining Tasks
 
-You define rake tasks in a file called `Rakefile` in the root of your project*.
+You define rake tasks in a file called `Rakefile` in the root of your project.
 Each rake task consists of a name and a block of code that runs when you execute
 that rake task.
 
