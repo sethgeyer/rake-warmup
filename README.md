@@ -48,7 +48,7 @@ Notice that `puts` in a rake task will print output to the terminal.
 Now that you know the basic syntax, try writing some rake tasks of your own. Be sure
 to add them to the Rakefile.
 
-- write a rake task that prints out the current time (check at the Time class)
+- write a rake task that prints out the current time (check out the [Time](http://www.ruby-doc.org/core-2.1.2/Time.html) class)
 - change the greet task from above to ask for the user's name, then print "Hello, [name]"
 
 ## Task Descriptions
