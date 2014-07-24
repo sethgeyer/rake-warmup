@@ -36,7 +36,7 @@ task :brush_teeth do
   puts "Brush your yellow teeth"
 end
 
-task :ready_for_class => [:brush_teeth, :eat_breakfast, :wake_up] do
+task :ready_for_class => [:wake_up, :eat_breakfast, :brush_teeth ] do
   puts "Goto School"
 end
 
