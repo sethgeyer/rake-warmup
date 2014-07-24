@@ -81,19 +81,48 @@ Try running `rake -T` from the command line.
 
 Do you see the rake tasks you wrote listed? Unless you added a desc to the tasks you wrote,
 you won't see them listed by `rake -T`. The reason is that `rake -T` only lists rake tasks
-that have a description. Add a desc to each of you
+that have a description. Add a desc to each of the rake tasks you have defined and run
+`rake -T` again.
 
-rake -T
+## Namespaces
 
-- namespaces
+Often you will have a set of rake tasks that are all related to one another. As an example,
+think about all the database related rake tasks we have been using so far (db:create, db:migrate,
+db:rollback, etc). With rake, you can create these kinds of related tasks using a namespace.
 
-- prerequisites
+    namespace :greeting do
+      desc "Say hello"
+      task :hello do
+        puts "Hello there"
+      end
 
-- environment variables
+      desc "Say howdy"
+      task :howdy do
+        puts "Howdy partner"
+      end
+    end
+
+## Prerequisites
+
+Often times you will want one rake task to depend on another. Rake allows us to
+define dependencies on tasks. These dependencies are called prerequisites,
+
+    task :first do
+      puts "First!"
+    end
+
+    task :second => :first do
+      puts "Second!"
+    end
+
+Write a rake task called `ready_for_class`, that depends on tasks called `wake_up`,
+`eat_breakfast`, and `brush_teeth`.
+
+## Environment Variables
 
 
 - default tasks?
 
-## Wrapup
+## Wrapping Up
 
-That is all for this warmup, but there is a lot more to rake.
+That is all for this warmup, but there is a lot more to rake. H
