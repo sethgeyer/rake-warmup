@@ -83,7 +83,13 @@ that have a description. Add a desc to each of the rake tasks you have defined a
 
 ## Environment Variables
 
+Often times you will use environment variables to change the behavior of a rake task.
+We have seen this before with the `db:migrate` rake task. To migrate the development
+database we run `rake db:migrate` and to migrate the test database we run
+`RACK_ENV=test rake db:migrate`.
 
+- Write a rake task called `print_favorite_food` that prints "Your favorite food is [food]",
+where [food] is replaced by the value of the FAVORITE_FOOD environment variable.
 
 ## Prerequisites
 
@@ -146,9 +152,19 @@ put them inside a namespace called `greeting`. To run these rake tasks, we have 
     ± |master ✗| → rake greeting:howdy
     Howdy partner
 
+Try adding a namespace to some of the tasks you have written.
+
 ## Default Tasks
 
-You can also
+Lastly, you can define a default rake task. The default rake task is the task
+that runs when you just type `rake`. For example, if I had defined the `first`
+task from above as the default task, then running `rake` would execute that task.
+
+    |ruby-2.1.1@gschool| Hunters-MacBook-Pro in ~/gschool/dev/warmups/rake-warmup
+    ± |master ✓| → rake
+    First!
+
+Do some research on defining default rake tasks and add a default task to your Rakefile.
 
 ## Wrapping Up
 
