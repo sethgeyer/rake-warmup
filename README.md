@@ -49,10 +49,7 @@ Now that you know the basic syntax, try writing some rake tasks of your own. Be 
 to add them to the Rakefile.
 
 - write a rake task that prints out the current time (check at the Time class)
-- change the greet task from above to ask for the user's name, then print "Hello, <name>"
-
-* There are a couple of different files that rake will look in when you run a
-rake task, but `Rakefile` is the most common.
+- change the greet task from above to ask for the user's name, then print "Hello, [name]"
 
 ## Task Descriptions
 
