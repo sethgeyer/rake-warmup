@@ -24,13 +24,9 @@ The main goals of this warmup are the ability to:
 
 ## Defining Tasks
 
-You define rake tasks in a file called `Rakefile` in the root of your project.
-
-
-When you type `rake` at the command line, the `rake` program will look
-makes some
-
-The easiest way to define a rake
+You define rake tasks in a file called `Rakefile` in the root of your project*.
+Each rake task consists of a name and a block of code that runs when you execute
+that rake task.
 
 Tasks are defined using the `task` method.
 
@@ -39,9 +35,28 @@ Tasks are defined using the `task` method.
     end
 
 
+To run a rake task, you run the `rake` command from the command line and
+tell `rake` which task to execute. To run the `greet` task defined above, you
+run:
+
+    |ruby-2.1.1@gschool| Hunters-MacBook-Pro in ~/gschool/dev/warmups/rake-warmup
+    ± |master ✗| → rake greet
+    Hello there
+
+Notice that `puts` in a rake task will print output to the terminal.
+
+Now that you know the basic syntax, try writing some rake tasks of your own. Be sure
+to add them to the Rakefile.
+
+- write a rake task that prints out the current time (check at the Time class)
+- change the greet task from above to ask for the user's name, then print "Hello, <name>"
+
+* There are a couple of different files that rake will look in when you run a
+rake task, but `Rakefile` is the most common.
+
 ## Task Descriptions
 
-Rake provides a method called `desc` for documenting what a rake task does.
+Rake provides a method called `desc` for describing what a rake task does.
 
     desc "Print a nice greeting"
     task :greet do
@@ -49,19 +64,36 @@ Rake provides a method called `desc` for documenting what a rake task does.
     end
 
 When other developers read the tasks you write, they have a nice a summary of
-what the task does.
+what the task does. Another nice feature of using the `desc` method is that it
+allows developers to see the summary of the rake tasks you write directly from
+the command line, without having to look at the Rakefile itself.
 
-Another nice feature of using the `desc` method is that it allows developers
-to see the summary of the rake tasks you write directly from the command line,
-without having to look at the Rakefile itself.
+After adding the desc line above the greet task, running the `rake -T` looks like this:
 
-- rake commands (-T, ...)
-    - -T
-    - --dry-run
-    - --help to see all options
+    |ruby-2.1.1@gschool| Hunters-MacBook-Pro in ~/gschool/dev/warmups/rake-warmup
+    ± |master ✗| → rake -T
+    rake greet  # Print a nice greeting
+
+Nice! This is especially helpful since sometimes rake tasks are defined in many different
+files, and without `rake -T` you would have to go a track them down yourself.
+
+Try running `rake -T` from the command line.
+
+Do you see the rake tasks you wrote listed? Unless you added a desc to the tasks you wrote,
+you won't see them listed by `rake -T`. The reason is that `rake -T` only lists rake tasks
+that have a description. Add a desc to each of you
+
+rake -T
+
 - namespaces
-- environment variables
+
 - prerequisites
+
+- environment variables
+
+
 - default tasks?
-- anything else?
-- only running a task one time
+
+## Wrapup
+
+That is all for this warmup, but there is a lot more to rake.
